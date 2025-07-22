@@ -3,7 +3,7 @@ Proyek deep learning untuk mengklasifikasikan gambar makanan ke dalam 101 katego
 
 ---
 
-# 🍱 Food Recognition using Food-101 Dataset
+# 🍱 Food Classifier using Food-101 Dataset
 
 Proyek ini adalah sistem klasifikasi gambar makanan menggunakan dataset [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) dan model deep learning (MobileNetV2). Model ini mampu mengenali 101 jenis makanan dari seluruh dunia.
 
@@ -18,17 +18,23 @@ Proyek ini adalah sistem klasifikasi gambar makanan menggunakan dataset [Food-10
 ## 📁 Struktur Folder
 
 ```
-food-recognition/
-├── dataset/
-│   └── food-101/          # Dataset asli yang diekstrak dari food-101.tar.gz
-├── model/
-│   ├── food101_model_final.h5  # Model hasil pelatihan terakhir
-│   └── best_model.h5           # Model dengan akurasi terbaik saat training
-├── src/
-│   ├── train.py           # Script untuk pelatihan model
-│   └── predict.py         # Script untuk melakukan prediksi
+food-Classifier-Project/
+├── __pycache__/
+│   └── food_predictor.cpython-312.pyc
+├── data/
+│   ├── food-101/
+│   │   ├── images/
+│   │   └── meta/
+│   └── temp.jpg
+├── saved_model/
+│   ├── best_model.h5
+│   └── food101_model_final.h5
+├── app.py
+├── food_predictor.py
 ├── requirements.txt
-└── README.md
+├── test_tf.py
+└── train_model.py
+
 ```
 
 ## 🚀 Cara Menjalankan
