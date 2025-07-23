@@ -1,4 +1,4 @@
-# Food-Image-Classifier-with-Food-101
+.# Food-Image-Classifier-with-Food-101
 Proyek deep learning untuk mengklasifikasikan gambar makanan ke dalam 101 kategori menggunakan dataset Food-101 dan model berbasis MobileNetV2.
 
 ---
@@ -45,24 +45,22 @@ food-Classifier-Project/
 pip install -r requirements.txt
 ```
 
-### 2. Ekstrak dataset
-
-Jika kamu sudah mengunduh `food-101.tar.gz`, ekstrak dengan:
-
-```bash
-tar -xvzf food-101.tar.gz
-```
-
-### 3. Jalankan pelatihan
+### 2. Jalankan pelatihan
 
 ```bash
 python src/train.py
 ```
 
-### 4. Prediksi makanan dari gambar
+### 3. Jalankan Program
 
 ```bash
-python src/predict.py --image path_ke_gambar.jpg
+streamlit run app.py
+```
+
+Atau
+
+```bash
+python -m streamlit run app.py
 ```
 
 ## 🔧 Konfigurasi
