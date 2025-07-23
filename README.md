@@ -51,7 +51,7 @@ pip install -r requirements.txt
 python src/train.py
 ```
 
-### 3. Jalankan Program
+### 3. Jalankan Program Classifier
 
 ```bash
 streamlit run app.py
