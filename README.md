@@ -45,13 +45,20 @@ food-Classifier-Project/
 pip install -r requirements.txt
 ```
 
-### 2. Jalankan pelatihan
+### 2.  Ekstrak dataset
+Jika kamu sudah mengunduh food-101.tar.gz, ekstrak dengan:
+
+```bash
+tar -xvzf food-101.tar.gz
+```
+
+### 3. Jalankan pelatihan
 
 ```bash
 python src/train.py
 ```
 
-### 3. Jalankan Program Food Classifier
+### 4. Jalankan Program Food Classifier
 
 ```bash
 streamlit run app.py
