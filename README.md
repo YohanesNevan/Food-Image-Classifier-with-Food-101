@@ -19,20 +19,24 @@ Proyek ini adalah sistem klasifikasi gambar makanan menggunakan **deep learning*
 ## 📁 Struktur Proyek
 
 ```
-food-classifier-project/
-├── app.py                     # Streamlit app
-├── food_predictor.py         # Modul prediksi
-├── train_model.py            # Script pelatihan model
-├── requirements.txt
-├── saved_model/
-│   ├── best_model.h5
-│   └── food101_model_final.h5
+food-Classifier-Project/
+├── __pycache__/
+│   └── food_predictor.cpython-312.pyc
 ├── data/
 │   ├── food-101/
 │   │   ├── images/
 │   │   └── meta/
+│   ├── food_db.json
+│   ├── food-101.tar.gz
 │   └── temp.jpg
-└── test_tf.py
+├── saved_model/
+│   ├── best_model.h5
+│   └── food101_model_final.h5
+├── app.py
+├── food_predictor.py
+├── requirements.txt
+├── test_tf.py
+└── train_model.py
 ```
 
 ---
