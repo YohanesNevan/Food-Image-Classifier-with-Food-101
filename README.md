@@ -94,7 +94,11 @@ streamlit run app.py
 
 ## 📷 Contoh Hasil Prediksi
 
-![Contoh Output](hasil1.png)
+![Contoh Output 1](hasil1.png)
+
+![Contoh Output 2](hasil2.png)
+
+![Contoh Output 3](hasil3.png)
 
 ---
 
