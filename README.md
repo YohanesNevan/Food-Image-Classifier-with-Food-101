@@ -1,110 +1,102 @@
-Berikut versi yang telah **diperbaiki dan dirapikan**, terutama pada bagian **link**, format markdown, dan konsistensi penulisan:
+# 🍱 Food Image Classifier with Food-101
+
+Proyek ini adalah sistem klasifikasi gambar makanan menggunakan **deep learning** dan **dataset Food-101**, dengan arsitektur **MobileNetV2** dan teknik fine-tuning. Model mampu mengenali **101 kategori makanan** dari seluruh dunia.
+
+📦 **Dataset**: [Food-101 on Kaggle](https://www.kaggle.com/datasets/kmader/food41)
 
 ---
 
-# 🍱 Food Classifier using Food-101 Dataset
+## 🧠 Fitur Utama
 
-Proyek deep learning untuk mengklasifikasikan gambar makanan ke dalam **101 kategori** menggunakan dataset [Food-101 dari ETH Zurich](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) dan model berbasis **MobileNetV2**.
-
----
-
-## 🧠 Fitur
-
-* Deteksi otomatis gambar makanan dari kamera atau file
-* Model CNN: **MobileNetV2** dengan fine-tuning
-* Dataset: **Food-101** dengan 75.000 gambar (1000 gambar per kelas)
-* Model hasil pelatihan disimpan sebagai `food101_model_final.h5`
-* Akurasi meningkat seiring jumlah epoch pelatihan
+* Deteksi otomatis gambar makanan dari file atau kamera
+* Model CNN ringan berbasis **MobileNetV2**
+* Fine-tuning untuk hasil lebih akurat
+* Dataset besar (75.000+ gambar)
+* Model disimpan sebagai: `food101_model_final.h5`
 
 ---
 
-## 📁 Struktur Folder
+## 📁 Struktur Proyek
 
 ```
-food-Classifier-Project/
-├── __pycache__/
-│   └── food_predictor.cpython-312.pyc
+food-classifier-project/
+├── app.py                     # Streamlit app
+├── food_predictor.py         # Modul prediksi
+├── train_model.py            # Script pelatihan model
+├── requirements.txt
+├── saved_model/
+│   ├── best_model.h5
+│   └── food101_model_final.h5
 ├── data/
 │   ├── food-101/
 │   │   ├── images/
 │   │   └── meta/
 │   └── temp.jpg
-├── saved_model/
-│   ├── best_model.h5
-│   └── food101_model_final.h5
-├── app.py
-├── food_predictor.py
-├── requirements.txt
-├── test_tf.py
-└── train_model.py
+└── test_tf.py
 ```
 
 ---
 
 ## 🚀 Cara Menjalankan
 
-### 1. Install dependencies
+### 1. Instalasi Dependensi
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Unduh dan ekstrak dataset
+### 2. Unduh dan Ekstrak Dataset
 
-Unduh dataset dari [Food-101 (ETH Zurich)](http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz), kemudian ekstrak:
+Dataset Food-101 bisa didapat dari Kaggle:
 
-```bash
-tar -xvzf food-101.tar.gz
-```
+🔗 [https://www.kaggle.com/datasets/kmader/food41](https://www.kaggle.com/datasets/kmader/food41)
 
-Letakkan folder hasil ekstrak (`food-101`) ke dalam folder `data/`.
+Setelah diunduh, ekstrak ke direktori `data/food-101/`.
 
-### 3. Jalankan pelatihan
+---
+
+### 3. Latih Model
 
 ```bash
 python train_model.py
 ```
 
-### 4. Jalankan aplikasi klasifikasi
+---
+
+### 4. Jalankan Aplikasi
 
 ```bash
 streamlit run app.py
 ```
 
-Atau, alternatif lain:
+---
 
-```bash
-python -m streamlit run app.py
-```
+## ⚙️ Konfigurasi Model
+
+* Arsitektur: MobileNetV2
+* Input size: 224x224
+* Epoch default: 10 (direkomendasikan 30+ untuk performa optimal)
+* Fine-tuning layer atas
 
 ---
 
-## 🔧 Konfigurasi
+## ⚠️ Catatan Tambahan
 
-* **Epoch** default: 10 (disarankan 30–100 untuk hasil lebih baik)
-* **Backbone** model: MobileNetV2 (bisa diganti dengan ResNet, EfficientNet, dll.)
-* **Ukuran gambar**: 224x224 px
-
----
-
-## ⚠️ Catatan
-
-* Akurasi model sangat dipengaruhi oleh jumlah epoch dan preprocessing
-* Jika spesifikasi komputer rendah, gunakan epoch kecil terlebih dahulu
+* Pelatihan awal bisa dilakukan dengan epoch rendah jika laptop terbatas
+* Akurasi akan membaik seiring jumlah epoch dan kualitas preprocessing
+* Bisa mengganti backbone ke ResNet, EfficientNet, dll.
 
 ---
 
-## 📷 Contoh Hasil
+## 📷 Contoh Hasil Prediksi
 
-![Contoh output klasifikasi](contoh_output.jpg)
-
----
-
-## 👨‍💻 Kontributor
-
-* **Yohanes Nevan** — Pelatihan model dan integrasi prediksi
-* Dataset oleh ETH Zurich — [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/)
+![Contoh Output](contoh_output.jpg)
 
 ---
 
-Kalau kamu ingin versi dalam bahasa Inggris atau ada tambahan seperti badge GitHub, lisensi, atau video demo, tinggal bilang saja!
+## 🧑‍💻 Kontributor
+
+* **Yohanes Nevan** – Pelatihan model, integrasi prediksi, dan antarmuka pengguna
+* **Dataset**: ETH Zurich, via [Kaggle: Food-101 by kmader](https://www.kaggle.com/datasets/kmader/food41)
+
+---
