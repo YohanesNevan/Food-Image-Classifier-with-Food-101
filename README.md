@@ -1,19 +1,22 @@
-.# Food-Image-Classifier-with-Food-101
-Proyek deep learning untuk mengklasifikasikan gambar makanan ke dalam 101 kategori menggunakan dataset Food-101 dan model berbasis MobileNetV2.
+Berikut versi yang telah **diperbaiki dan dirapikan**, terutama pada bagian **link**, format markdown, dan konsistensi penulisan:
 
 ---
 
 # 🍱 Food Classifier using Food-101 Dataset
 
-Proyek ini adalah sistem klasifikasi gambar makanan menggunakan dataset [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) dan model deep learning (MobileNetV2). Model ini mampu mengenali 101 jenis makanan dari seluruh dunia.
+Proyek deep learning untuk mengklasifikasikan gambar makanan ke dalam **101 kategori** menggunakan dataset [Food-101 dari ETH Zurich](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) dan model berbasis **MobileNetV2**.
+
+---
 
 ## 🧠 Fitur
 
 * Deteksi otomatis gambar makanan dari kamera atau file
-* Model CNN dengan MobileNetV2 + fine-tuning
-* Dataset: Food-101 (75.000 gambar)
-* Hasil pelatihan disimpan ke `food101_model_final.h5`
+* Model CNN: **MobileNetV2** dengan fine-tuning
+* Dataset: **Food-101** dengan 75.000 gambar (1000 gambar per kelas)
+* Model hasil pelatihan disimpan sebagai `food101_model_final.h5`
 * Akurasi meningkat seiring jumlah epoch pelatihan
+
+---
 
 ## 📁 Struktur Folder
 
@@ -34,8 +37,9 @@ food-Classifier-Project/
 ├── requirements.txt
 ├── test_tf.py
 └── train_model.py
-
 ```
+
+---
 
 ## 🚀 Cara Menjalankan
 
@@ -45,50 +49,62 @@ food-Classifier-Project/
 pip install -r requirements.txt
 ```
 
-### 2.  Ekstrak dataset
-Jika kamu sudah mengunduh food-101.tar.gz, ekstrak dengan:
+### 2. Unduh dan ekstrak dataset
+
+Unduh dataset dari [Food-101 (ETH Zurich)](http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz), kemudian ekstrak:
 
 ```bash
 tar -xvzf food-101.tar.gz
 ```
 
+Letakkan folder hasil ekstrak (`food-101`) ke dalam folder `data/`.
+
 ### 3. Jalankan pelatihan
 
 ```bash
-python src/train.py
+python train_model.py
 ```
 
-### 4. Jalankan Program Food Classifier
+### 4. Jalankan aplikasi klasifikasi
 
 ```bash
 streamlit run app.py
 ```
 
-Atau
+Atau, alternatif lain:
 
 ```bash
 python -m streamlit run app.py
 ```
 
+---
+
 ## 🔧 Konfigurasi
 
-* Epoch default: 10 (disarankan 30–100 untuk hasil lebih baik)
-* Backbone: MobileNetV2 (dapat diganti dengan ResNet, EfficientNet, dll.)
-* Ukuran gambar: 224x224
-
-## ⚠️ Catatan
-
-* Akurasi model tergantung jumlah epoch dan preprocessing dataset
-* Jika laptop terlalu panas, gunakan epoch kecil dulu lalu lanjutkan
-
-## 📷 Contoh Hasil
-
-![contoh hasil](contoh_output.jpg)
-
-## 🧑‍💻 Kontributor
-
-* \[Yohanes Nevan] — Pelatihan model dan integrasi prediksi
-* Dataset oleh ETH Zurich ([Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/))
+* **Epoch** default: 10 (disarankan 30–100 untuk hasil lebih baik)
+* **Backbone** model: MobileNetV2 (bisa diganti dengan ResNet, EfficientNet, dll.)
+* **Ukuran gambar**: 224x224 px
 
 ---
 
+## ⚠️ Catatan
+
+* Akurasi model sangat dipengaruhi oleh jumlah epoch dan preprocessing
+* Jika spesifikasi komputer rendah, gunakan epoch kecil terlebih dahulu
+
+---
+
+## 📷 Contoh Hasil
+
+![Contoh output klasifikasi](contoh_output.jpg)
+
+---
+
+## 👨‍💻 Kontributor
+
+* **Yohanes Nevan** — Pelatihan model dan integrasi prediksi
+* Dataset oleh ETH Zurich — [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/)
+
+---
+
+Kalau kamu ingin versi dalam bahasa Inggris atau ada tambahan seperti badge GitHub, lisensi, atau video demo, tinggal bilang saja!
